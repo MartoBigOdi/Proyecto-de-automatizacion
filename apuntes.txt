@@ -1,0 +1,6 @@
+
+//cli open Cypres
+./node_modules/.bin/cypress open
+
+//Para subir a la nube de Cypress 
+./node_modules/.bin/cypress run --record --key 90416d1f-127d-4da8-8d0a-e4e1984d2898
