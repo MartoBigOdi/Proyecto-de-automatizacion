@@ -4,12 +4,14 @@
 describe('Primer conjunto de casos de pruebas', function() {
 
     //Caso de prueba 1
-    it('Ingresar a la pagina principal de DemoBlaze Electro', function(){
+    it('Contabilizar la cantidad de elementos en la seccion de la pagina principal', function(){
         //Paso 1
         //Paso 2
         //Paso ...
-        cy.visit("https://www.demoblaze.com/prod.html?idp_=8")
-
+        cy.visit("http://automationpractice.com/index.php")
+        
+        //Verificar la cantidad de elementos visibles
+        cy.get('#homefeatured .product-container').should()
     })
 
     //Caso de prueba 2
