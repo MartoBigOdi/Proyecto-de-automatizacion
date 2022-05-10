@@ -9,6 +9,7 @@ describe('Primer conjunto de casos de pruebas', function() {
         cy.visit("http://automationpractice.com/index.php")
     })
 
+    
     //Caso de prueba 1
     it('Contabilizar la cantidad de elementos en la seccion de la pagina principal', function(){
         
@@ -87,6 +88,27 @@ describe('Primer conjunto de casos de pruebas', function() {
 
 
    })
+
+    //Caso de prueba 4
+    it('Verificamos que el dropdown de women, tenga los elementos necesarios', function(){
+
+        //Buscamos al elemento, le modificamos con invoke(ATRIBUTO, NOMBRE ATRIBUTO, VALUE ATRIBUTO A MODIFICAR)
+        //Una vez que tenemos el panel a observar verificamos con elementos del mismo para lograr los asserts correctos
+        cy.get('#block_top_menu > ul > li:nth-child(1) > ul').invoke('attr' ,'style', 'display: block')
+
+         //Mostramos msj
+         cy.log('Encontramos el elemento')
+
+        cy.get('a[title="Tops"]').should('be.visible')
+        cy.get('a[title="T-shirts"]').should('be.visible')
+        cy.get('a[title="Blouses"]').should('be.visible')
+        cy.get('a[title="Dresses"]').should('be.visible')
+        //Con ^ le estamos diciendo buscame con la palabra que comience title
+        cy.get('a[title^="Casual"]').should('be.visible')
+        cy.get('a[title^="Evening"]').should('be.visible')
+        cy.get('a[title^="Summer"]').should('be.visible')
+    })
+
 
 
 })
