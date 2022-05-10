@@ -110,5 +110,29 @@ describe('Primer conjunto de casos de pruebas', function() {
     })
 
 
+    //Caso de prueba 5
+    it('Veriicar que los checkboxes estan funcionando', function(){
+
+        let checkboxLocator1 = 'li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-casual_dresses"]) input'
+        let checkboxLocator2 = 'li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-evening_dresses"]) input'
+        let checkboxLocator3 = 'li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-summer_dresses"]) input'
+
+
+        //Obtenemos el elemento que queremos utilizar
+        cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click()
+        //Buscamos el elemento checkbox y verificamos con el should()
+        cy.get(checkboxLocator1).check()
+        .should('be.checked') //El should es el assert de la verificacion
+        
+        //Validamos los demas checkboxes, con "not.be.checked" validamos el estado de los demas.
+        //Le sacamos el check() porque no tenemos que hacerles el check
+        cy.get(checkboxLocator2)
+        .should('not.be.checked')
+        cy.get(checkboxLocator3)
+        .should('not.be.checked')
+
+    })
+
+
 
 })
