@@ -1,15 +1,12 @@
-
-
 //Suite de casos de pruebas
-describe('Primer conjunto de casos de pruebas', function() {
+describe("Primer conjunto de casos de pruebas", function () {
+  //Con el beforeEach le decimos tenemos esta precondicion para empezar los Tests cases
+  beforeEach(() => {
+    //Ingresamoa a la web
+    cy.visit("http://automationpractice.com/index.php");
+  });
 
-    //Con el beforeEach le decimos tenemos esta precondicion para empezar los Tests cases
-    beforeEach(()=> {
-        //Ingresamoa a la web
-        cy.visit("http://automationpractice.com/index.php")
-    })
-
-    
+  /*
     //Caso de prueba 1
     it('Contabilizar la cantidad de elementos en la seccion de la pagina principal', function(){
         
@@ -134,5 +131,72 @@ describe('Primer conjunto de casos de pruebas', function() {
     })
 
 
+    //Caso de prueba 6
+    it('Verificar que los dropdonws de arrglo esten funcionando', function(){
 
-})
+        let dressLocator = '.sf-menu > :nth-child(2) > .sf-with-ul'
+         //Obtenemos el elemento que queremos utilizar
+        cy.get(dressLocator).click()
+        //Usamos selector del dropdown, le hacemos assert '.should()' y le sumamos el 
+        //'have.value' que es lo que se espero que este en esa etiqueta.
+        cy.get('#selectProductSort').select('In stock').should('have.value', 'quantity:desc')
+
+    })
+
+*/
+
+  //Caso de prueba 7
+  it("Crear una compra desde cero", function () {
+    //Step 1, vamos al buscador y tipeamos "Blouse"
+    cy.get("#search_query_top").type("Blouse");
+
+    //Step 2 hacemos click para hacer esa busqueda
+    cy.get("#searchbox > .btn").click();
+    //Validamos que haya algo unico en esa vista
+    cy.get(".heading-counter").should(
+      "contain.text",
+      "1 result has been found"
+    );
+
+    //Step 3
+    cy.get(".ajax_add_to_cart_button > span").click();
+    //Step 4 seguimos el checkout
+    cy.get(".button-container > .button-medium > span").click();
+
+    //Step 4 buscamos los valores para hacer assert
+    cy.get("tr[id^=product]")
+      .find(".product-name > a")
+      .should('contain.text', 'Blouse')
+    cy.get("tr[id^=product]")
+      .find(".price")
+      .should('contain.text', '27.00')
+
+    //Step 5
+    cy.get('.cart_navigation > .button > span').click()
+    
+    //Step 6 completar datos
+    cy.get('#email').type('maradona@aol.com')
+    cy.get('#passwd').type('maradona90')
+    //Hacemos click en sign in
+    cy.get('#SubmitLogin > span').click()
+
+    //Step 7 hacemos click en checkout para avanzar
+    cy.get('.cart_navigation > .button > span').click()
+    //Verificamos la vista
+    cy.get('td.delivery_option_price > .delivery_option_price')
+    .should('contain.text', '2.00')
+    cy.get('tr > :nth-child(3) > strong')
+    .should('contain.text', 'My carrier')
+
+    //Step 8 hacer check
+    cy.get('#cgv').check()
+    .should('be.checked') //El should es el assert de la verificacion
+
+    //Step 9 Click para confirmar y seguir
+    cy.get('.cart_navigation > .button > span').click()
+    
+    });
+      
+ 
+
+});
