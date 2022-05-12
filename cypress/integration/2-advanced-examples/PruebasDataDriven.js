@@ -106,7 +106,7 @@ describe("Segundo conjunto de casos de prueba", function () {
     cy.get('#city').click().find("div:contains('"+ this.datos.ciudad +"')[id^='react-select']").should('be.visible').click();
 
 
-    
+
 
   })  
 
