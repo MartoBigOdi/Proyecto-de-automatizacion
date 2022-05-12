@@ -1,12 +1,13 @@
 //Suite de casos de pruebas
 describe("Primer conjunto de casos de pruebas", function () {
   //Con el beforeEach le decimos tenemos esta precondicion para empezar los Tests cases
+  //Corre uns sola vez antes de todos los "it"
   beforeEach(() => {
     //Ingresamoa a la web
     cy.visit("http://automationpractice.com/index.php");
   });
 
-  /*
+  
     //Caso de prueba 1
     it('Contabilizar la cantidad de elementos en la seccion de la pagina principal', function(){
         
@@ -143,7 +144,6 @@ describe("Primer conjunto de casos de pruebas", function () {
 
     })
 
-*/
 
   //Caso de prueba 7
   it("Crear una compra desde cero", function () {
@@ -197,6 +197,6 @@ describe("Primer conjunto de casos de pruebas", function () {
     
     });
       
- 
+    
 
 });
