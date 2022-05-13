@@ -10,8 +10,9 @@ describe("Tercer conjunto de casos de prueba", function () {
 
 
       //Caso de prueba
-      it('Realizar una compra de celulares basadas en su titulo', function(){
+      it('Realizar compra de celulares basadas en su titulo', function(){
             
+        cy.get("#menu ul a:contains('Phones & PDAs')").click()
       })
 
 })
