@@ -15,49 +15,49 @@ describe("Segundo conjunto de casos de prueba", function () {
 
   });
 
-  beforeEach(() => {
+  beforeEach( function () {
     //Ingresamos a la pagina de formulario, hasta los checkboxes de hobbies.
     cy.visit("https://demoqa.com/automation-practice-form");
   });
 
-  /*
+/*
   //Caso de pruebas 01: Seguimos con el formulario desde el calendar hasta cargar img
   it("LLenamos nuestro primer formulario utilizando data", function () {
-    //Step 1 completamos los campos
-    //cy.log(this.datos.apellido)
-    //cy.get('#firstName').type(this.datos.nombre)
-    //cy.get('input[placeholder="First Name"]').should('id', 'firstName')
 
-    // cy.get('#lastName').type(this.datos.apellido)
-    // cy.get('#userEmail').type(this.datos.mail)
+    cy.log(this.datos.apellido)
+    cy.get('#firstName').type(this.datos.nombre)
+    cy.get('input[placeholder="First Name"]').should('id', 'firstName')
+
+    cy.get('#lastName').type(this.datos.apellido)
+    cy.get('#userEmail').type(this.datos.mail)
     //Al no poder hacer le click porque tiene un
     // elemento encima, utilizamos el ".check(){force:true}"
     //Interpolamos los datos del json en el selector
-    //cy.get('input[name="gender"][value="' + this.datos.sexo + '"]').check({force: true})
-    //.should('be.checked')
-    // cy.get('input[placeholder="Mobile Number"]').should('id', 'userNumber')
-    // cy.get('#userNumber').type(this.datos.telefono)
-    //cy.get("#dateOfBirthInput").click();
+    cy.get('input[name="gender"][value="' + this.datos.sexo + '"]').check({force: true})
+    .should('be.checked')
+    cy.get('input[placeholder="Mobile Number"]').should('id', 'userNumber')
+    cy.get('#userNumber').type(this.datos.telefono)
+    cy.get("#dateOfBirthInput").click();
     //Verificamos si esta visible, el "month-select"
     //Con Select, elegimos los datos desde el array del example.json,
     //con posicionamiento directo accedemos a su valor y lo usamos.
-    //cy.get(".react-datepicker__month-select").select(
-    //  this.datos.fechanacimiento[0]
-    //);
-    //cy.get(".react-datepicker__year-select").select(
-    //  this.datos.fechanacimiento[1]
-    //);
-    //cy.get(".react-datepicker__day--0" + this.datos.fechanacimiento[2])
-    //  .should("be.visible")
-    //  .click();
+    cy.get(".react-datepicker__month-select").select(
+      this.datos.fechanacimiento[0]
+    );
+    cy.get(".react-datepicker__year-select").select(
+      this.datos.fechanacimiento[1]
+    );
+    cy.get(".react-datepicker__day--0" + this.datos.fechanacimiento[2])
+    .should("be.visible")
+    .click();
 
     //Para el mes utilizamos "substring(desde,hasta)"   
     // entonces solo buscamos que contenga las primeras tres letras equal con lo que 
     //recibimos del posicionamiento directo
-    //cy.get("#dateOfBirthInput") 
-    //.should('contain.value', this.datos.fechanacimiento[0].substring(0,3))
-    //.should('contain.value', this.datos.fechanacimiento[1])
-    //.should('contain.value', this.datos.fechanacimiento[2])  
+    cy.get("#dateOfBirthInput") 
+    .should('contain.value', this.datos.fechanacimiento[0].substring(0,3))
+    .should('contain.value', this.datos.fechanacimiento[1])
+    .should('contain.value', this.datos.fechanacimiento[2])  
 
     cy.get('.subjects-auto-complete__value-container').type(this.datos.materia)
     cy.get('div[id^="react-select-"]').click()
@@ -70,9 +70,9 @@ describe("Segundo conjunto de casos de prueba", function () {
 
   });
 
-  */
+  
+ */
 
-  //
   //Caso de prueba 02: Cargamos un archivo, en este caso una img.
   it("LLenamos nuestro primer formulario utilizando data, parte 2", function () {
 
@@ -94,10 +94,8 @@ describe("Segundo conjunto de casos de prueba", function () {
     });
 
 
-    //Subimo la direccion 
-    cy.get('#currentAddress')
-    .type(this.datos.direccion)
-    .should('contain.value','siempre viva')
+    //Subimos la direccion 
+    cy.get('#currentAddress').type(this.datos.direccion).should('contain.value','siempre viva')
 
 
     //Elegimos en el dropdowns de Estado y ciudad
@@ -105,12 +103,6 @@ describe("Segundo conjunto de casos de prueba", function () {
     cy.get('#state').click().find("div:contains('"+ this.datos.estado +"')[id^='react-select']").should('be.visible').click();
     cy.get('#city').click().find("div:contains('"+ this.datos.ciudad +"')[id^='react-select']").should('be.visible').click();
 
-
-
-
   })  
-
-
-
 
 });
