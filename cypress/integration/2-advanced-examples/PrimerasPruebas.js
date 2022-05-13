@@ -1,4 +1,7 @@
-//Suite de casos de pruebas
+/// <reference types="Cypress"/>
+
+//Suite de casos de pruebas 1.0
+
 describe("Primer conjunto de casos de pruebas", function () {
   //Con el beforeEach le decimos tenemos esta precondicion para empezar los Tests cases
   //Corre uns sola vez antes de todos los "it"

@@ -1,6 +1,6 @@
 /// <reference types="Cypress"/>
 
-// Suite de cassos de prueba 2.0
+// Suite de casos de prueba 3.0
 describe("Tercer conjunto de casos de prueba", function () {
 
     beforeEach( function () {
