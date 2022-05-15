@@ -23,3 +23,30 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+//Primer elementos modularizado
+Cypress.Commands.add("agregarElementoAlCarrito", (nombreProducto) => {
+
+    cy.get("div[class='product-thumb']").as('contenedorDeProductos')
+
+    cy.get("@contenedorDeProductos")
+    .each(($el, index, $list) => {
+      //buscamos el atributo y guardamos su valor ".then()"
+      cy.get(':has(.caption) h4 a').eq(index).then( function($el1) {
+
+          let producto = $el1.text();
+          cy.log(producto);
+
+          if (producto.includes(nombreProducto)) {
+            //Mostramos msj
+            cy.log('Encontramos el producto');
+            cy.get("@contenedorDeProductos")
+              .eq(index)
+              .find("button[onclick^='cart.add']")
+              .click();
+          }
+        });
+    });
+})
