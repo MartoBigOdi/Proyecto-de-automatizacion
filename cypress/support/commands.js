@@ -46,6 +46,8 @@ Cypress.Commands.add("agregarElementoAlCarrito", (nombreProducto) => {
               .eq(index)
               .find("button[onclick^='cart.add']")
               .click();
+              //Validamos cada iteracion
+              cy.get('.alert-success.alert-dismissible').should('contain.text', nombreProducto)
           }
         });
     });

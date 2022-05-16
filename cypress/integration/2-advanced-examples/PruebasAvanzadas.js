@@ -14,19 +14,20 @@ describe("Tercer conjunto de casos de prueba", function () {
       
   });
 
-})  
+});  
 
   //Caso de prueba
   it("Realizar compra de celulares basadas en su titulo", function () {
-    cy.get("#menu ul a:contains('Phones & PDAs')").click()
+    cy.get("#menu ul a:contains('Phones & PDAs')").click();
     
    //Caso de prueba completo con modularizacion
     cy.agregarElementoAlCarrito(this.datos.telefono1);
     cy.agregarElementoAlCarrito(this.datos.telefono2);
     cy.agregarElementoAlCarrito(this.datos.telefono3);
     
-    
-    cy.get('#cart-total').should('contain.text', '3 item(s) - $583.19')
+    //Validamos que esten los 3 telefonos agregados
+    cy.get('#cart-total').should('contain.text', '3 item(s) - $583.19');
+    cy.get('.btn-inverse').click();
 
   });
 
