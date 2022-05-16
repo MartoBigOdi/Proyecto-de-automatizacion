@@ -20,10 +20,11 @@ describe("Tercer conjunto de casos de prueba", function () {
   it("Realizar compra de celulares basadas en su titulo", function () {
     cy.get("#menu ul a:contains('Phones & PDAs')").click();
     
-   //Caso de prueba completo con modularizacion
-    cy.agregarElementoAlCarrito(this.datos.telefono1);
-    cy.agregarElementoAlCarrito(this.datos.telefono2);
-    cy.agregarElementoAlCarrito(this.datos.telefono3);
+   //Caso de prueba completo con modularizacion y con un loop para no repetir codigo
+   //Recorremos todo el array completo. 
+    this.datos.articulo.forEach(element => {
+      cy.agregarElementoAlCarrito(element);
+    });
     
     //Validamos que esten los 3 telefonos agregados
     cy.get('#cart-total').should('contain.text', '3 item(s) - $583.19');

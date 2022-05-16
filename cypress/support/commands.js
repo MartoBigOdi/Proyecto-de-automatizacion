@@ -36,6 +36,7 @@ Cypress.Commands.add("agregarElementoAlCarrito", (nombreProducto) => {
       //buscamos el atributo y guardamos su valor ".then()"
       cy.get(':has(.caption) h4 a').eq(index).then( function($el1) {
 
+        //Guardamos el texto que tiene para luego utilizar el ".include()""
           let producto = $el1.text();
           cy.log(producto);
 
