@@ -30,6 +30,7 @@ describe("Segundo conjunto de casos de prueba", function () {
 
     cy.get('#lastName').type(this.datos.apellido)
     cy.get('#userEmail').type(this.datos.mail)
+    
     //Al no poder hacer le click porque tiene un
     // elemento encima, utilizamos el ".check(){force:true}"
     //Interpolamos los datos del json en el selector
@@ -38,6 +39,7 @@ describe("Segundo conjunto de casos de prueba", function () {
     cy.get('input[placeholder="Mobile Number"]').should('id', 'userNumber')
     cy.get('#userNumber').type(this.datos.telefono)
     cy.get("#dateOfBirthInput").click();
+
     //Verificamos si esta visible, el "month-select"
     //Con Select, elegimos los datos desde el array del example.json,
     //con posicionamiento directo accedemos a su valor y lo usamos.

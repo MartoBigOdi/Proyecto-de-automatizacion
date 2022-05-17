@@ -25,6 +25,7 @@ describe("Primer conjunto de casos de pruebas", function () {
 
     it('Hacer una compra desde cero con pageObjectModel', function(){
 
+        //Step 1
         //Home Page 
         homePage.getSearchBoxInput().type('Blouse');
         homePage.getSearchBoxButton().click();
@@ -32,23 +33,28 @@ describe("Primer conjunto de casos de pruebas", function () {
         homePage.getAddToCartElementButton('Blouse').click();
         homePage.getProceedTOCheckoutButton().click();
         
+        //Step 2
         //Shopping Summary Page
         shoppingCartSummaryPage.getProductNameText().should('contain.text', 'Blouse');
         shoppingCartSummaryPage.getProductPriceText().should('contain.text', '27.00');
         shoppingCartSummaryPage.getProceedToCheckoutButton().click();
 
+        //Step 3
         //Authentication Page
         authenticationPage.getMailAdressInput().type('maradona@aol.com');
         authenticationPage.getPasswordInput().type('maradona90');
         authenticationPage.getSigInButton().click();
 
+        //Step 4
         //Address Page
         addressPage.getProceedToCheckoutButton().click();
 
+        //Step 5
         //Shipping Page
         shipppingPage.getCheckboxtButton().check().should('be.checked');
         shipppingPage.getProceedToCheckoutButton().click();
 
+        //Step 6
         //Payment Page
         paymentPage.getPayByBankingButton().click();
         paymentPage.getConfirmButton().click();

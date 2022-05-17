@@ -25,8 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-
-//Primer elementos modularizado
+//Primer comando modularizado
 Cypress.Commands.add("agregarElementoAlCarrito", (nombreProducto) => {
 
     cy.get("div[class='product-thumb']").as('contenedorDeProductos')
@@ -52,4 +51,17 @@ Cypress.Commands.add("agregarElementoAlCarrito", (nombreProducto) => {
           }
         });
     });
+})
+
+
+//Segundo Comando modularizado
+Cypress.Commands.add('verificamosElementosEnCarrito', (nombreProducto) =>{ 
+  cy.get("tr:has(button[onclick*='cart.remove']) td[class='text-left'] a")
+    .each(($el, index, $list) => {
+      cy.get("td[class='text-left'] a").eq(index).then(function($el1){
+        let producto = $el1.text();
+        cy.log(nombreProducto);
+        cy.get("tr:has(button[onclick*='cart.remove'])").should('contain.text', nombreProducto)
+      })
+    })
 })
