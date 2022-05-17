@@ -8,12 +8,16 @@ class HomePage {
         return cy.get('#searchbox > .btn');
     }
 
-    getAddToCatElementButton(productDescripcion){
-        return cy.get('.product-container:has(.product-name[title=" + productDescripcion + "]) .ajax_add_to_cart_button');
+    getAddToCartElementButton(productDescripcion){
+        return cy.get('.product-container:has(.product-name[title="' + productDescripcion + '"]) .ajax_add_to_cart_button');
     }
 
     getProceedTOCheckoutButton(){
         return cy.get('.button-medium[title="Proceed to checkout"]');
+    }
+
+    getTextForValidate(){
+        return cy.get(".heading-counter");
     }
 
 }
