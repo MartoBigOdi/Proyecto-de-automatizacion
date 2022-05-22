@@ -1,5 +1,7 @@
 /// <reference types="Cypress"/>
 
+//Modelo Page Object Model
+
 import AddressPage from '../../support/PageObjects/AddressPage'
 import AuthenticationPage from '../../support/PageObjects/AuthenticationPage'
 import HomePage from '../../support/PageObjects/HomePage'
@@ -19,7 +21,8 @@ describe("Primer conjunto de casos de pruebas", function () {
 
     beforeEach(() => {
         //Ingresamoa a la web
-        cy.visit("http://automationpractice.com/index.php");
+        //Utilizamos una variable de entorno que seteamos en el cypress.json de config
+        cy.visit(Cypress.env("url") + "/index.php");
       });
 
 

@@ -1,3 +1,6 @@
 {
-  "projectId": "spduq2"
+  "projectId": "spduq2",
+  "env":{
+    "url": "http://automationpractice.com"
+  }
 }
