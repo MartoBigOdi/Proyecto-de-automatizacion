@@ -3,5 +3,6 @@
   "env": {
     "url": "http://automationpractice.com"
   },
+  "testFiles": "**/*.feature",
   "retries": 1
 }

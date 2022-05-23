@@ -6,6 +6,7 @@
   "scripts": {
     "open": "cypress open",
     "test": "cypress run",
+    "testChromeHeaded": "npm run test -- --browser chrome --headed",
     "testChrome": "npm run test -- --browser chrome --headless",
     "testDashboardChrome": "npm run test -- --browser chrome --headless --record --key 4df135f1-8343-477e-b328-118f85d5d9d7",
     "testSpecific": "npm run testChrome -- --spec .\\cypress\\integration\\2-advanced-examples\\ClothesRetailPage.js"
@@ -13,6 +14,10 @@
   "author": "Marto V",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.6.0"
+    "cypress": "^9.6.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }

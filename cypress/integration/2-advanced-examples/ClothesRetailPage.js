@@ -10,7 +10,7 @@ import ShipppingPage from '../../support/PageObjects/ShipppingPage'
 import ShoppingCartSummaryPage from '../../support/PageObjects/ShoppingCartSummaryPage'
 
 
-describe("Primer conjunto de casos de pruebas", function () {
+describe("Primer caso de prueba con pageObjectModel", function () {
 
     const addressPage = new AddressPage();
     const authenticationPage = new AuthenticationPage();
@@ -26,7 +26,7 @@ describe("Primer conjunto de casos de pruebas", function () {
       });
 
 
-    it('Hacer una compra desde cero con pageObjectModel', function(){
+    it('Hacer una compra desde cero', function(){
 
         //Step 1
         //Home Page 
