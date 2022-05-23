@@ -2,5 +2,6 @@
   "projectId": "k6mdc2",
   "env": {
     "url": "http://automationpractice.com"
-  }
+  },
+  "retries": 1
 }
