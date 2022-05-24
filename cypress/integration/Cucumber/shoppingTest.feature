@@ -1,10 +1,10 @@
-Feature: Pruebas en Automation Practice
+Feature: Tests on Automation Practice
 
     Este Feature esta siendo adaptado a Cucumber con Cypress
 
-#Lo pusimo en ingles para practicar un poco, nada mas. 
+#Lo pusimos en ingles para practicar un poco, nada mas. 
 
-    Scenario: Crear una compra desde cero
+    Scenario: Make a shopping from scratch
     Given the user is on the landing page 
     And the user search a criteria
     When the user add this criterio to the cart
