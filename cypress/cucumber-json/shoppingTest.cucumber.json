@@ -1,0 +1,83 @@
+[
+  {
+    "description": "    Este Feature esta siendo adaptado a Cucumber con Cypress",
+    "keyword": "Feature",
+    "name": "Pruebas en Automation Practice",
+    "line": 1,
+    "id": "pruebas-en-automation-practice",
+    "tags": [],
+    "uri": "shoppingTest.feature",
+    "elements": [
+      {
+        "id": "pruebas-en-automation-practice;crear-una-compra-desde-cero",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Crear una compra desde cero",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the landing page",
+            "result": {
+              "status": "passed",
+              "duration": 5014000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the user search a criteria",
+            "result": {
+              "status": "passed",
+              "duration": 2347000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "the user add this criterio to the cart",
+            "result": {
+              "status": "passed",
+              "duration": 4510000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "the value of the article is 27.00 dolares",
+            "result": {
+              "status": "passed",
+              "duration": 2600000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "the shopping is complete on the page",
+            "result": {
+              "status": "passed",
+              "duration": 14573000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the complete shopping message should to appear",
+            "result": {
+              "status": "passed",
+              "duration": 18000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
