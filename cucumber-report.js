@@ -3,7 +3,7 @@ const report = require('multiple-cucumber-html-reporter');
 report.generate({
 	jsonDir: 'cypress/cucumber-json',
 	reportPath: './cypress/reports',
-    //Estos datos los quemamos nosotros directo
+    //Estos datos los quemamos nosotros
 	metadata:{
         browser: {
             name: 'chrome',
@@ -11,8 +11,8 @@ report.generate({
         },
         device: 'Local test machine',
         platform: {
-            name: 'ubuntu',
-            version: '16.04'
+            name: 'Windows',
+            version: '10'
         }
     },
     customData: {
@@ -21,8 +21,8 @@ report.generate({
             {label: 'Project', value: 'Custom project'},
             {label: 'Release', value: '1.2.3'},
             {label: 'Cycle', value: 'B11221.34321'},
-            {label: 'Execution Start Time', value: 'Nov 19th 2017, 02:31 PM EST'},
-            {label: 'Execution End Time', value: 'Nov 19th 2017, 02:56 PM EST'}
+            {label: 'Execution Start Time', value: 'FECHA DE HOY'},
+            {label: 'Execution End Time', value: 'FECHA DE HOY'}
         ]
     }
 });
