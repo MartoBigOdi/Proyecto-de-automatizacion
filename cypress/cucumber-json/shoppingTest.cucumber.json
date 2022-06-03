@@ -2,17 +2,17 @@
   {
     "description": "    Este Feature esta siendo adaptado a Cucumber con Cypress",
     "keyword": "Feature",
-    "name": "Pruebas en Automation Practice",
+    "name": "Tests on Automation Practice",
     "line": 1,
-    "id": "pruebas-en-automation-practice",
+    "id": "tests-on-automation-practice",
     "tags": [],
     "uri": "shoppingTest.feature",
     "elements": [
       {
-        "id": "pruebas-en-automation-practice;crear-una-compra-desde-cero",
+        "id": "tests-on-automation-practice;make-a-shopping-from-scratch",
         "keyword": "Scenario",
         "line": 7,
-        "name": "Crear una compra desde cero",
+        "name": "Make a shopping from scratch",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -23,7 +23,7 @@
             "name": "the user is on the landing page",
             "result": {
               "status": "passed",
-              "duration": 4797000000
+              "duration": 4423000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user search a criteria",
             "result": {
               "status": "passed",
-              "duration": 1977000000
+              "duration": 2574000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the user add this criterio to the cart",
             "result": {
               "status": "passed",
-              "duration": 2594000000
+              "duration": 4558000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "the value of the article is 27.00 dolares",
             "result": {
               "status": "passed",
-              "duration": 4446000000
+              "duration": 2318000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "the shopping is complete on the page",
             "result": {
               "status": "passed",
-              "duration": 11079000000
+              "duration": 17006000000
             }
           },
           {
@@ -73,7 +73,7 @@
             "name": "the complete shopping message should to appear",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 19000000
             }
           }
         ]
